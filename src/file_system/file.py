@@ -6,6 +6,11 @@ from typing import Dict, List, Union
 
 class File:
 
+    @classmethod
+    def create_file_directory(cls, file_path: str):
+        directory = os.path.dirname(file_path)
+        cls.create_directory(directory)
+
     @staticmethod
     def create_directory(path: str):
         if not os.path.exists(path):
