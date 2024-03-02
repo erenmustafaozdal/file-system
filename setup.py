@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="emo_file_system",
-    version="v0.0.3",
+    version="v0.0.4",
     author="Eren Mustafa Özdal",
     author_email="eren.060737@gmail.com",
     packages=find_packages(where="src"),

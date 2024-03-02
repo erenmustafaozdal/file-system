@@ -34,17 +34,17 @@ class File:
         mode: str = "r",
         encoding: str = "utf-8"
     ) -> Union[List, Dict]:
-        with open(filepath, mode, encoding) as f:
+        with open(filepath, mode, encoding=encoding) as f:
             return f.readlines()
 
     @staticmethod
     def read(filepath: str, mode: str = "r", encoding: str = "utf-8"):
-        with open(filepath, mode, encoding if mode == "r" else None) as f:
+        with open(filepath, mode, encoding=encoding if mode == "r" else None) as f:
             return f.read()
 
     @staticmethod
     def read_json(filepath: str, mode: str = "r", encoding: str = "utf-8"):
-        with open(filepath, mode, encoding if mode == "r" else None) as f:
+        with open(filepath, mode, encoding=encoding if mode == "r" else None) as f:
             return json.load(f)
 
     @staticmethod
@@ -54,7 +54,7 @@ class File:
         mode: str = "w",
         encoding: str = "utf-8"
     ):
-        with open(filepath, mode, encoding) as f:
+        with open(filepath, mode, encoding=encoding) as f:
             f.writelines(lines)
 
     @staticmethod
@@ -64,7 +64,7 @@ class File:
         mode: str = "w",
         encoding: str = "utf-8"
     ):
-        with open(filepath, mode, encoding) as f:
+        with open(filepath, mode, encoding=encoding) as f:
             json.dump(lines, f, ensure_ascii=False)
 
     @staticmethod
