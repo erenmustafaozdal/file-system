@@ -68,5 +68,14 @@ class File:
             json.dump(lines, f, ensure_ascii=False)
 
     @staticmethod
-    def get_filename(path) -> str:
-        return os.path.basename(path)
+    def get_filename(path, without_extentsion: bool = False) -> str:
+        filename = os.path.basename(path)
+
+        if not without_extentsion:
+            return filename
+
+        return os.path.splitext(filename)[0]
+
+
+file = "C:\\Users\\emozdal\\code\\python-packages\\file-system\\Pipfile.lock"
+print(File.get_filename(file, without_extentsion=True))
