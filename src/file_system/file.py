@@ -75,7 +75,3 @@ class File:
             return filename
 
         return os.path.splitext(filename)[0]
-
-
-file = "C:\\Users\\emozdal\\code\\python-packages\\file-system\\Pipfile.lock"
-print(File.get_filename(file, without_extentsion=True))
